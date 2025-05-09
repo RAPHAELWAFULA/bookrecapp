@@ -3,7 +3,7 @@ import page1 from "./pages/explore";
 import page2 from "./pages/recomandations";
 import page3 from "./pages/library";
 import pages4 from "./pages/contact";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
 import { useState } from "react";
 
@@ -27,20 +27,57 @@ function App () {
   const cardsData = [
    
     {
-      title: "Adventure",
+      title: <Link to = "#">ADVENTURE</Link>,
       description: "Explore thrilling and mysterious adventures.",
       image : "adventure.jpg", 
     },
     {
-      title: "Science",
+      title: <Link to = "#">SCIENCE</Link>,
       description: "Learn about discoveries and inventions." ,
       image: "science.jpg",
     },
     {
-      title: "Romance",
+      title: <Link to = "#">ROMANCE</Link>,
       description: "Enjoy heartfelt love stories.",
       image : "romance.jpg",
     },
+
+
+     {
+      title: <Link to = "#">NATURE</Link>,
+      description: "Mysteries and wonders wispered by nature.",
+      image : "nature.png", 
+    },
+    {
+      title: <Link to = "#">HISTORY</Link>,
+      description: "Interested with events of the past and origin of things?." ,
+      image: "history.jpg",
+    },
+    {
+      title: <Link to = "#">SPIRITUAL</Link>,
+      description: "Nourish your spirit.",
+      image : "spiritual.jpg",
+    },
+
+
+     {
+      title: <Link to = "Romance">HORROR</Link>,
+      description: "Scary stories interst many people find them here.",
+      image : "horrors.jpg", 
+    },
+    {
+      title: <Link to = "Romance">DOCUMENTARY</Link>,
+      description: "Facts is a great way of storing knowledge." ,
+      image: "documentary.jpg",
+    },
+    {
+      title: <Link to = "Romance">POLITICAL</Link>,
+      description: "Eager to learn political terms, tactics and structures, we know the best books for that. .",
+      image : "political.jpg",
+    },
+
+
+
   ];
   return (
     <Router>
