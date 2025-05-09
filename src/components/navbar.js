@@ -17,11 +17,11 @@ const Navbar = () =>{
     <div className="navbar">
         <div className="logo">
             <img
-             src="my_logo-removebg-preview.png" 
+             src="logoa-removebg-preview.png" 
             alt="My local image"
             style={{
-                height:"100px",
-                width:"100px"
+                height:"150px",
+                width:"200px"
             }} 
             /> 
         </div>
