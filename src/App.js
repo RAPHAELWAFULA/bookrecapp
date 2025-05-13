@@ -1,9 +1,11 @@
 import Navbar from "./components/navbar";
-import page1 from "./pages/explore";
-import page2 from "./pages/recomandations";
-import page3 from "./pages/library";
-import pages4 from "./pages/contact";
+import explore from "./pages/explore";
+import recomandations from "./pages/recomandations";
+import library from "./pages/library";
+import contact from "./pages/contact";
+import Footer from "./components/footer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 import './App.css';
 import { useState } from "react";
 
@@ -80,8 +82,11 @@ function App () {
 
   ];
   return (
-    <Router>
+    
+<Router>
     <Navbar />
+   
+    
 <div className="explore"
 style={{
   backgroundImage:"URL(picf.jpg)",
@@ -121,7 +126,53 @@ style={{
           
   </div>
 </div>
+
+<div className="footer">
+      <p>&copy; 2025 Your Name. All rights reserved.</p>
+      <p>Contact: your.email@example.com</p>
+      <p>
+        Follow me:{" "}
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>{" "}
+        |{" "}
+        <a
+          href="https://linkedin.com/in/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </p>
+      <div className="footericons">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <FaGithub size={24} />
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin size={24} />
+        </a>
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <FaTwitter size={24} />
+        </a>
+        <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <FaInstagram size={24} />
+        </a>
+      </div>
+    </div>
+
+<Routes>
+  <Route path="/explore" element={<explore />} />
+    <Route path="/recomandations" element={<recommendations />} />
+    <Route path="/library" element={<library />} />
+    <Route path="/contact" element={<contact />} />
+  </Routes>
+  < footer />
 </Router>
+
   );
 }
 export default App;

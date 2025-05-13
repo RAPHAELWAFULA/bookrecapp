@@ -29,8 +29,8 @@ const Navbar = () =>{
         >
       <Link to="/" >EXPLORE</Link>
       <Link to="/page2" >RECOMANDATIONS</Link>
-      <Link to="/page3" >LIBRARY</Link>
-      <Link to="/page4">CONTACT US</Link>
+      <Link to="/" >LIBRARY</Link>
+      <Link to="/contact">CONTACT US</Link>
       </div>
      <div className="search">
          <input
