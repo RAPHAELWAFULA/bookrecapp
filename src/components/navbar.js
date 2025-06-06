@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './navbar.css';
 import { useState} from 'react';
-
+import { FaHome } from 'react-icons/fa';
 
 
 const Navbar = () =>{
@@ -18,18 +18,19 @@ const Navbar = () =>{
         <div className="logo">
             <img
              src="logoa-removebg-preview.png" 
-            alt="My local image"
+            alt="My local display"
             style={{
                 height:"150px",
                 width:"200px"
             }} 
             /> 
         </div>
+        <a href="/" style={{display:"none",color:"white"}} className='homeicon'><FaHome /></a>
         <div className="navlinks"
         >
       <Link to="/" >EXPLORE</Link>
-      <Link to="/page2" >RECOMANDATIONS</Link>
-      <Link to="/" >LIBRARY</Link>
+      <Link to="/recomandation" >RECOMANDATIONS</Link>
+      <Link to="/library" >LIBRARY</Link>
       <Link to="/contact">CONTACT US</Link>
       </div>
      <div className="search">
