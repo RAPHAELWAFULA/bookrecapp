@@ -5,12 +5,19 @@ import "./footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <p>&copy; 2025 Your Name. All rights reserved.</p>
-      <p>Contact: your.email@example.com</p>
-      <p>
+      <div className="footer1">
+      <h2 style={{backgroundColor:"black"}}>BOOKRAC</h2>
+     <p> Your trusted book recomendation platform
+      &copy; 2025 <a href="">BOOKRAC</a> . All rights reserved.
+      Contact: <a href="">wafularaphael84@gmail.com</a>
+      
+      Privacy Policy, Terms of Service, © Copyright
+      </p>
+      
         Follow me:{" "}
+        <p>
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/RAPHAELWAFULA?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -18,14 +25,36 @@ const Footer = () => {
         </a>{" "}
         |{" "}
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/raphael-wafula-64650333b/"
           target="_blank"
           rel="noopener noreferrer"
         >
           LinkedIn
-        </a>
-      </p>
-      <div className="footericons">{/* You can add icons here later */}</div>
+        </a></p>
+
+      
+      </div>
+
+      <div className="footericons">
+      <img src="./iconx2.png" alt="Book Cover" />
+      <img src="/iconfb2.png" alt="Book Cover" />
+      <img src="/iconwhatsap2.png" alt="Book Cover" />
+      <img src="/iconisnta2.png" alt="Book Cover" />
+
+      </div>
+
+      <div className="footerinfo">
+        <ul>
+          <li><a href="">FAQ</a></li>
+          <li><a href="">TELL</a></li>
+          <li><a href="">ABOUT</a></li>
+          <li><a href="">HOME</a></li>
+          <li><a href="">HELP</a></li>
+        </ul>
+
+   
+      </div>
+
     </div>
   );
 };

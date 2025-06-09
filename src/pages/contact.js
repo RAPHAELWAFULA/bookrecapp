@@ -32,8 +32,9 @@ function Contact() {
   };
 
   return (
+    <div className='container'>
     <div className="contact-container">
-      <h2>Contact Us</h2>
+      <h2 style={{backgroundColor:"transparent"}}>Contact Us, we will appreciate your feedback</h2>
       <form onSubmit={handleSubmit} className="contact-form">
         <input
           type="text"
@@ -98,6 +99,7 @@ function Contact() {
         </select>
         <button type="submit" className="contact-button">Send Message</button>
       </form>
+    </div>
     </div>
   );
 }

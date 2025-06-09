@@ -19,7 +19,8 @@ const App = () => {
         <Route path="/library" element={<Library />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
+      
     </Router>
   );
 };
