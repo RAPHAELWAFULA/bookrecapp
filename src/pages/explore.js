@@ -1,5 +1,6 @@
 import React from "react";
 // import "./Explore.css"; // Make sure to import your CSS
+import SignIn from "./signin";
 
 const Explore = () => {
   return (
@@ -8,10 +9,10 @@ const Explore = () => {
         <h1>WELCOME TO BOOKRAC</h1>
         <div className="authentication">
           <button className="signin">
-            <a href="#">SIGN IN</a>
+            <a href="./signin">SIGN IN</a>
           </button>
           <button className="signin">
-            <a href="/">SIGN UP</a>
+            <a href="./signup">SIGN UP</a>
           </button>
         </div>
       
