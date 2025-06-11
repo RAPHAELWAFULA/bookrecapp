@@ -11,16 +11,26 @@ import './App.css';
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import Favorites from "./pages/favourites";
+import React, { useState } from 'react';
 
 
-const App = () => {
+function App() {
+  const [likedBooks, setLikedBooks] = useState([]);
+
+  const handleLikeBook = (book) => {
+    if (!likedBooks.some((b) => b.id === book.id)) {
+      setLikedBooks([...likedBooks, book]);
+    }
+  };
+  
   return (
     <Router>
+      {/* {location.pathname !== "/" && <Navbar />} */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Explore />} />
-        <Route path="/Favourite" element={<Favourites />} />
-        <Route path="/library" element={<Library />} />
+        <Route path="/favourite" element={<Favourites likedBooks={likedBooks} />} />
+        <Route path="/library" element={<Library onLikeBook={handleLikeBook} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signin" element={<SignIn />} />
         

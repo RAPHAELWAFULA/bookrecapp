@@ -52,6 +52,8 @@ const Footer = () => {
           <li><a href="">HELP</a></li>
         </ul>
 
+        <h1>BOOKRAC</h1>
+
    
       </div>
 

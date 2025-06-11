@@ -71,8 +71,10 @@ align-items: flex-end;
 .navlinks a:hover,.navlinks a:active,.navlinks a:focus,
 .navlinks a:active
 {
-    color:;
+    color:red;
     text-decoration: overline;
+    font-weight: 600;
+    font-size: larger;
    
 
 }

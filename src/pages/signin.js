@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './signin.css'; // Ensure this is in the same folder or adjust the path
-import { Router } from 'react-router-dom';
+// import { Router } from 'react-router-dom';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -51,7 +51,7 @@ const SignIn = () => {
           </button>
         </div>
 
-        <button type="submit" className="signin-button">Sign In</button>
+        <button type="submit" className="signin-button"> <a href='/library'>Sign In</a></button>
 
         <div className="google-signin-container">
           <div className="divider">or</div>

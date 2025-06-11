@@ -1,11 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './library.css';
 
-const themes = ['fiction', 'science', 'history', 'technology'];
+const themes = [
+  'fiction',
+  'science',
+  'history',
+  'technology',
+  'art',
+  'travel',
+  'biography',
+  'business',
+  'health',
+  'romance',
+  'sports',
+  'cooking',
+  'love',
+  'horse',
+];
 
 const Library = ({ onLikeBook }) => {
   const [booksByTheme, setBooksByTheme] = useState({});
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -15,7 +31,7 @@ const Library = ({ onLikeBook }) => {
       for (const theme of themes) {
         try {
           const res = await fetch(
-            `https://www.googleapis.com/books/v1/volumes?q=subject:${theme}&maxResults=8`
+            `https://www.googleapis.com/books/v1/volumes?q=subject:${theme}&maxResults=10`
           );
           const data = await res.json();
           newBooks[theme] = data.items || [];
@@ -34,10 +50,22 @@ const Library = ({ onLikeBook }) => {
 
   if (loading) return <div className="loading">📖 Loading books...</div>;
 
+  const filteredThemes = themes.filter((theme) =>
+    theme.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="library-container">
       <h1>Library</h1>
-      {themes.map((theme) => (
+      <input
+        type="text"
+        placeholder="Search by theme..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="search-bar"
+      />
+
+      {filteredThemes.map((theme) => (
         <div key={theme} className="theme-section">
           <h2 className="theme-title">{theme.toUpperCase()}</h2>
           <div className="book-grid">
