@@ -34,6 +34,7 @@ function App() {
         <Route path="/library" element={<Library onLikeBook={handleLikeBook} />} />
         <Route path="/AddBooks" element={<AddBooks />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/MyBooks" element={<MyBooks />} />
         
         
