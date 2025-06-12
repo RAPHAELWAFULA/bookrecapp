@@ -79,13 +79,21 @@ align-items: flex-end;
 
 }
 
-.search input{
-   padding: 8px 12px;
-  border-radius: 20px;
-  border: 2px solid aliceblue;
-  width: 180px;
-  font-family: nova;
-  color:blueviolet;
-}  
+.read {
+font-size: 18px;
+height: 50px;
+/* border: 1px solid black; */
+display: flex;
+justify-content: center;
+align-items: center;
+/* padding: 2px; */
+background-color: black;
+border-radius: 11%;
+/* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+padding-left: 2px;
+padding-right: 2px;
+color: brown;
+}
+ 
 
 

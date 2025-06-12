@@ -13,6 +13,7 @@ const Library = ({ onLikeBook }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [bookSearchTerm, setBookSearchTerm] = useState('');
   const [ratings, setRatings] = useState({});
+  const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -22,7 +23,7 @@ const Library = ({ onLikeBook }) => {
       for (const theme of themes) {
         try {
           const res = await fetch(
-            `https://www.googleapis.com/books/v1/volumes?q=subject:${theme}&maxResults=20`
+            `https://www.googleapis.com/books/v1/volumes?q=subject:${theme}&maxResults=40`
           );
           const data = await res.json();
           newBooks[theme] = data.items || [];
@@ -39,21 +40,33 @@ const Library = ({ onLikeBook }) => {
     fetchBooks();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleRatingChange = (bookId, value) => {
+    setRatings((prev) => ({ ...prev, [bookId]: value }));
+  };
+
   if (loading) return <div className="loading">📖 Loading books...</div>;
 
   const filteredThemes = themes.filter((theme) =>
     theme.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleRatingChange = (bookId, value) => {
-    setRatings((prev) => ({ ...prev, [bookId]: value }));
-  };
-
   return (
     <div className="library-container">
       <h1>Library</h1>
 
-      {/* Search by Theme */}
       <input
         type="text"
         placeholder="Search by theme..."
@@ -62,7 +75,6 @@ const Library = ({ onLikeBook }) => {
         className="search-bar"
       />
 
-      {/* Search by Book Name */}
       <input
         type="text"
         placeholder="Search by book title..."
@@ -122,6 +134,13 @@ const Library = ({ onLikeBook }) => {
           </div>
         );
       })}
+
+      {/* Scroll to Top Button */}
+      {showScroll && (
+        <button className="scroll-to-top show" onClick={scrollToTop}>
+          ⬆️
+        </button>
+      )}
     </div>
   );
 };

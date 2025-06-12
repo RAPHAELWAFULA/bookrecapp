@@ -28,13 +28,7 @@ const Navbar = () =>{
       <Link to="/MyBooks"> MY LIBRARY</Link>
 
       </div>
-     <div className="search">
-         <input
-        type="text"
-        placeholder="Search all books..."
-        value={query}
-        onChange={handleChange}/>
-     </div>
+     <h1 className='read'>LET'S READ</h1>
      </div>
      
 

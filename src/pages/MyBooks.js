@@ -3,11 +3,29 @@ import './MyBooks.css';
 
 const MyBooks = () => {
   const [myBooks, setMyBooks] = useState([]);
+  const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
     const storedBooks = JSON.parse(localStorage.getItem('myBooks')) || [];
     setMyBooks(storedBooks);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScroll(true);
+      } else {
+        setShowScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const removeBook = (indexToRemove) => {
     const updatedBooks = myBooks.filter((_, index) => index !== indexToRemove);
@@ -34,6 +52,17 @@ const MyBooks = () => {
             </div>
           ))}
         </div>
+      )}
+
+      {/* Scroll to Top Button */}
+      {showScroll && (
+      <button
+      className={`scroll-to-top ${showScroll ? 'show' : ''}`}
+      onClick={scrollToTop}
+    >
+      ⬆️
+    </button>
+    
       )}
     </div>
   );
