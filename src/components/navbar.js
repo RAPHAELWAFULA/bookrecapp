@@ -24,7 +24,9 @@ const Navbar = () =>{
       <Link to="/" >EXPLORE</Link>
       <Link to="/favourite" >FAVOURITES</Link>
       <Link to="/library" >LIBRARY</Link>
-      <Link to="/contact">CONTACT US</Link>
+      <Link to="/AddBooks">ADD A BOOK</Link>
+      <Link to="/MyBooks"> MY LIBRARY</Link>
+
       </div>
      <div className="search">
          <input

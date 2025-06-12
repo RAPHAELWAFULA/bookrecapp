@@ -2,8 +2,9 @@ import Navbar from "./components/navbar";
 import Explore from "./pages/explore";
 import Favourites from "./pages/favourites";
 import Library from "./pages/library";
-import Contact from "./pages/contact";
+import AddBooks from "./pages/AddBooks";
 import Footer from "./components/footer";
+import MyBooks from "./pages/MyBooks";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 import './App.css';
@@ -31,8 +32,9 @@ function App() {
         <Route path="/" element={<Explore />} />
         <Route path="/favourite" element={<Favourites likedBooks={likedBooks} />} />
         <Route path="/library" element={<Library onLikeBook={handleLikeBook} />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/AddBooks" element={<AddBooks />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/MyBooks" element={<MyBooks />} />
         
         
       </Routes>
