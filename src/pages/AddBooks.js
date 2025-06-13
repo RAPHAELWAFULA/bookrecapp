@@ -28,6 +28,7 @@ const AddBook = () => {
   };
 
   return (
+    <div className='add-book-container1'>
     <div className="add-book-container">
       <h2>Add a New Book</h2>
       <form className="book-form" onSubmit={handleSubmit}>
@@ -56,6 +57,7 @@ const AddBook = () => {
         </label>
         <button type="submit">Save Book</button>
       </form>
+    </div>
     </div>
   );
 };

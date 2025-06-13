@@ -1,9 +1,17 @@
+.add-book-container1{
+  background-image: url('/public/footerlogo.png');
+  background-repeat: repeat; /* This tiles the image in all directions */
+  background-size: 150px; 
+}
 .add-book-container {
   padding: 20px;
   max-width: 600px;
   margin: auto;
-  background: #f9f9f9;
+  background-color:;
   border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 100px;
+
 }
 
 .book-form label {
@@ -13,10 +21,11 @@
 
 .book-form input,
 .book-form select {
-  width: 100%;
+  width: 95%;
   padding: 8px;
   margin-top: 5px;
   font-size: 16px;
+  margin-right: 10px;
 }
 
 .book-form button {

@@ -28,7 +28,14 @@ const Navbar = () =>{
       <Link to="/MyBooks"> MY LIBRARY</Link>
 
       </div>
-     <h1 className='read'>LET'S READ</h1>
+     <h1 className='read'>
+     <img 
+  src="/footerlogo.png" 
+  alt="logo"
+  style={{ width: "100px", height: "70px" }} 
+/>
+
+     </h1>
      </div>
      
 

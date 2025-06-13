@@ -4,7 +4,7 @@ import './library.css';
 const themes = [
   'fiction', 'science', 'history', 'technology', 'art',
   'travel', 'biography', 'business', 'health', 'romance',
-  'sports', 'cooking', 'love', 'horse',
+  'sports', 'cooking', 'love', 'horse','music','religion and doctrines','legends and myths','horror','disney books'
 ];
 
 const Library = ({ onLikeBook }) => {

@@ -11,13 +11,15 @@
     text-decoration:overline;
     font-weight: 800; 
     width: 100%;
-    border-bottom:3px solid #e64545 ;
+    border-bottom:3px double #e64545 ;
     display: flex;
     text-align: center;
     justify-content: center;
     margin-top: 150px;
     margin-bottom: 150px;
     color: #e64545;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
   }
   
   .book-grid {
