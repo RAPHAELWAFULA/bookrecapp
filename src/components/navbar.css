@@ -92,3 +92,31 @@ justify-content:center;
   align-items: baseline;
 }
 
+
+
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ffdddd;
+  color: #a00;
+  padding: 10px 20px;
+  border: 1px solid #a00;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.auth-buttons button {
+  margin-left: 10px;
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.auth-buttons button:hover {
+  background-color: red;
+}

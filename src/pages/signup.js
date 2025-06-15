@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './signup.css';
+import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const SignUp = ({ setIsAuthenticated }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,16 +19,19 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match!');
+      alert('❌ Passwords do not match!');
       return;
     }
-    console.log('Sign up data:', formData);
-    // Submit to server or Firebase here
+
+    // ✅ Successful signup
+    setIsAuthenticated(true); // grant access to navbar
+    alert(`✅ Sign up successful! Welcome, ${formData.name}!`);
+    navigate('/library'); // or any protected page
   };
 
   return (
-    
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2 className="signup-title">Create Account</h2>

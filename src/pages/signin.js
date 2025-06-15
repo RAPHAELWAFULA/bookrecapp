@@ -51,7 +51,7 @@ const SignIn = () => {
           </button>
         </div>
 
-        <button type="submit" className="signin-button"> <a href='/library'>Sign In</a></button>
+        <button type="submit" className="signin-button"> Sign In</button>
 
         <div className="google-signin-container">
           <div className="divider">or</div>
