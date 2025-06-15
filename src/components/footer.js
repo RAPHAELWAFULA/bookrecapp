@@ -4,9 +4,14 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="footer1">
-      <h2 style={{backgroundColor:"black"}}>BOOKRAC</h2>
+    <div className="footer-container">
+      <div className="topfooter">
+        <img src="/footerlogo.png" alt=""/>
+      </div>
+      <div className="bottomfooter">
+     
+        <div className="footerinfo">
+        <h2 style={{backgroundColor:"#36454F"}}>BOOKRAC</h2>
      <p> Your trusted book recomendation platform
       &copy; 2025 <a href="">BOOKRAC</a> . All rights reserved.
       Contact: <a href="">wafularaphael84@gmail.com</a>
@@ -32,24 +37,20 @@ const Footer = () => {
           LinkedIn
         </a></p>
 
-      
-      </div>
- 
-    <div className="footericon-cont">
-      <div className="footlogo">
-      <img src="./footerlogo.png" alt="Description" />
 
-      </div>
-      <div className="footericons">
-      <img src="./iconx2.png" alt="Book Cover" />
+        </div>
+        < div className="footericons">
+        
+      <img src="./iconX2.png" alt="Book Cover" />
       <img src="/iconfb2.png" alt="Book Cover" />
       <img src="/iconwhatsap2.png" alt="Book Cover" />
       <img src="/iconisnta2.png" alt="Book Cover" />
 
-      </div>
-      </div>
 
-      <div className="footerinfo">
+        </div>
+        <div className="footerlinks" style={{
+      
+        }}>
         <ul>
           <li><a href="">FAQ</a></li>
           <li><a href="">TELL</a></li>
@@ -57,12 +58,8 @@ const Footer = () => {
           <li><a href="">HOME</a></li>
           <li><a href="">HELP</a></li>
         </ul>
-
-        <h1>BOOKRAC</h1>
-
-   
+        </div>
       </div>
-
     </div>
   );
 };

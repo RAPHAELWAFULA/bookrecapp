@@ -52,7 +52,7 @@ align-items: flex-end;
  text-decoration: none;
  color:  black;
  font-weight: 600;
- font-family: nova;
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  
 
 }
@@ -72,9 +72,12 @@ align-items: flex-end;
 .navlinks a:active
 {
     color:red;
-    text-decoration: overline;
     font-weight: 600;
     font-size: larger;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  
    
 
 }
