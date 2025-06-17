@@ -31,7 +31,7 @@ function App() {
       <Routes>
         {/* Pass setIsAuthenticated to Explore so user can log in */}
         <Route path="/" element={<Explore setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signin" element={<SignIn setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="/signup" element={<SignUp setIsAuthenticated={setIsAuthenticated} />} />
 
 

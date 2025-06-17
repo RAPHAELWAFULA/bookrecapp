@@ -93,7 +93,7 @@
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 🔥 Box shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   background-color:darkgray;
@@ -107,7 +107,31 @@
 
 .signin:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* stronger shadow on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+
+.signup{  background-color: #4a90e2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  background-color:darkgray;
+}
+
+.signup a{
+  text-decoration: none;
+  color: white;
+  background-color: darkgray;
+}
+
+.signup:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+
 }
 
 

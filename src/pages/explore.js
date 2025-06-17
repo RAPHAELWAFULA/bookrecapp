@@ -11,7 +11,7 @@ const Explore = () => {
           <button className="signin">
             <a href="./signin">SIGN IN</a>
           </button>
-          <button className="signin">
+          <button className="signup">
             <a href="./signup">SIGN UP</a>
           </button>
         </div>

@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
         < div className="footericons">
         
-      <img src="./iconX2.png" alt="Book Cover" />
+      <img src="/iconX2.png" alt="Book Cover" />
       <img src="/iconfb2.png" alt="Book Cover" />
       <img src="/iconwhatsap2.png" alt="Book Cover" />
       <img src="/iconisnta2.png" alt="Book Cover" />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './signup.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // or from your custom axios.js instance
 
 const SignUp = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const SignUp = ({ setIsAuthenticated }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
@@ -25,10 +26,22 @@ const SignUp = ({ setIsAuthenticated }) => {
       return;
     }
 
-    // ✅ Successful signup
-    setIsAuthenticated(true); // grant access to navbar
-    alert(`✅ Sign up successful! Welcome, ${formData.name}!`);
-    navigate('/library'); // or any protected page
+    try {
+      const res = await axios.post('http://localhost:5000/signup', {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      });
+
+      localStorage.setItem('token', res.data.token); // ✅ Moved here inside try block
+
+      alert(`✅ ${res.data.message} Welcome, ${formData.name}!`);
+      setIsAuthenticated(true);
+      navigate('/library');
+    } catch (err) {
+      const errorMsg = err.response?.data?.message || 'Signup failed';
+      alert(`❌ ${errorMsg}`);
+    }
   };
 
   return (

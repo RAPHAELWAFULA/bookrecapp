@@ -1,27 +1,36 @@
 import React, { useState } from 'react';
-import './signin.css'; // Ensure this is in the same folder or adjust the path
-// import { Router } from 'react-router-dom';
+import './signin.css';
+import { useNavigate } from 'react-router-dom';
+import axios from '../api/axios';
 
-const SignIn = () => {
+const SignIn = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-    // Add authentication logic here
-  };
+  const navigate = useNavigate();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post('/signin', { email, password });
+  
+      alert(`📚 Welcome back, ${res.data.name}! Bookrac missed you!`);
+      localStorage.setItem('token', res.data.token);
+      setIsAuthenticated(true);
+      navigate('/library');
+    } catch (error) {
+      const errorMsg = error.response?.data?.message || 'Signin failed';
+      alert(`❌ ${errorMsg}`);
+    }
+  };
   const handleGoogleSignIn = () => {
     console.log('Sign in with Google clicked');
-    // Integrate with Google OAuth here
+    // Google OAuth logic here
   };
 
   return (
-    
-        
     <div className="signin-container">
       <form className="signin-form" onSubmit={handleSubmit}>
         <h2 className="signin-title">Sign In</h2>
@@ -51,7 +60,7 @@ const SignIn = () => {
           </button>
         </div>
 
-        <button type="submit" className="signin-button"> Sign In</button>
+        <button type="submit" className="signin-button">Sign In</button>
 
         <div className="google-signin-container">
           <div className="divider">or</div>
@@ -70,7 +79,6 @@ const SignIn = () => {
         </p>
       </form>
     </div>
-    
   );
 };
 
