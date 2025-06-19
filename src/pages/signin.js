@@ -1,33 +1,29 @@
 import React, { useState } from 'react';
 import './signin.css';
 import { useNavigate } from 'react-router-dom';
-import axios from '../api/axios';
+import axios from '../api/axios'; // this must have baseURL set to /api/auth
 
 const SignIn = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('/signin', { email, password });
-  
-      alert(`📚 Welcome back, ${res.data.name}! Bookrac missed you!`);
+      const res = await axios.post('/signin', { email, password }); // relative to baseURL
+
       localStorage.setItem('token', res.data.token);
       setIsAuthenticated(true);
+
+      alert(`📚 Welcome back, ${res.data.name}! Bookrac missed you!`);
       navigate('/library');
     } catch (error) {
       const errorMsg = error.response?.data?.message || 'Signin failed';
       alert(`❌ ${errorMsg}`);
     }
-  };
-  const handleGoogleSignIn = () => {
-    console.log('Sign in with Google clicked');
-    // Google OAuth logic here
   };
 
   return (
@@ -61,18 +57,6 @@ const SignIn = ({ setIsAuthenticated }) => {
         </div>
 
         <button type="submit" className="signin-button">Sign In</button>
-
-        <div className="google-signin-container">
-          <div className="divider">or</div>
-          <button type="button" className="google-button" onClick={handleGoogleSignIn}>
-            <img
-              src="https://developers.google.com/identity/images/g-logo.png"
-              alt="Google"
-              className="google-logo"
-            />
-            Sign in with Google
-          </button>
-        </div>
 
         <p className="signup-link">
           Don't have an account? <a href="/signup">Sign up</a>
