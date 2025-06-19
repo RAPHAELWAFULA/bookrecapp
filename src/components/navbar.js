@@ -19,9 +19,9 @@ const Navbar = ({ isAuthenticated }) => {
 
   return (
     <div className="navbar">
-      <div className="logo">
-        <h1>BOOKRAC</h1>
-      </div>
+    
+      <div className='small-nav'>
+     
 
       <a href="/" style={{ display: "none", color: "white" }} className="homeicon">
         <FaHome />
@@ -34,6 +34,9 @@ const Navbar = ({ isAuthenticated }) => {
         <a href="/library" onClick={(e) => handleProtectedNav(e, "/library")}>LIBRARY</a>
         <a href="/AddBooks" onClick={(e) => handleProtectedNav(e, "/AddBooks")}>ADD A BOOK</a>
         <a href="/MyBooks" onClick={(e) => handleProtectedNav(e, "/MyBooks")}>MY LIBRARY</a>
+      </div>
+      <div className="logo">
+        <h1>BOOKRAC</h1>
       </div>
 
       <h1 className="read">
@@ -50,6 +53,7 @@ const Navbar = ({ isAuthenticated }) => {
           ⚠️ Please sign in first!
         </div>
       )}
+      </div>
     </div>
   );
 };

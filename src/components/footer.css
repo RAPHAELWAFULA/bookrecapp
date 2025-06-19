@@ -4,16 +4,16 @@
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-    background-color:#36454F;
+    background-color:transparent;
 }
 
 
 .topfooter{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color:#36454F;
+    background-color:transparent;
    
 }
 .topfooter img{
@@ -33,6 +33,30 @@
     background-color:#36454F;
     
 }
+.bottom1, .bottom2, .bottom3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    background-color:#36454F;
+    flex-direction: column;
+    height: 100%;
+    
+}
+
+.bottom2 ul, b, .bottom2 li{
+    background-color:#36454F; 
+    list-style-type: none;
+   
+   
+}
+
+.bottom3 ul, li,.bottom3 a{
+    background-color:#36454F; 
+    text-decoration: none;
+    color: #FFC0CB;
+    list-style-type: none;
+}
 
 .footerinfo{
     display: flex;
@@ -42,7 +66,13 @@
     width: 25%;
     padding: 10px;
     flex-direction: column;
-    border-right: 3px double white ;}
+} 
+.footerinfo h2{ 
+    font-size: 40px;
+color: brown;
+font-family:'exile';
+padding-top: 20px;
+}
 
 .footerinfo p{
     background-color:#36454F;
@@ -50,7 +80,7 @@
 
 .footerinfo a{
     background-color:#36454F;
-    color:white;
+    color:#FFC0CB;
     text-decoration: none;
 }
 
@@ -62,17 +92,23 @@ color:red;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    width: 25%;
+    width: 100%;
     background-color:#36454F; 
     height: 100%;
+    padding: 10px;
+}
 
+
+
+.footericons img{
+    padding:10px;
 }
 
 .footerlinks a {
    
     background-color:#36454F; 
     display: flex;
-    color: white;
+    color: #FFC0CB;
     list-style-type: none;
     line-height: 40px;
     text-decoration: none;
@@ -90,7 +126,7 @@ color:red;
     background-color:#36454F; 
     display: flex;
     justify-content: center;
-    border-left: 3px double white;
+    /* border-left: 3px double white; */
     height: 100%;
     padding: 35px;
  

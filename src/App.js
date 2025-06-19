@@ -25,7 +25,8 @@ function App() {
 
   return (
     <Router>
-      {/* Navbar now receives isAuthenticated */}
+      {/* Navbar  receives isAuthenticated */}
+      
       <Navbar isAuthenticated={isAuthenticated} />
 
       <Routes>
