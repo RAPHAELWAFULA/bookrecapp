@@ -73,7 +73,7 @@ search-bars {
 
 /* Book image and zoom effect */
 .book-image {
-  width: 100%;
+  width: 70%;
   height: 250px;
   object-fit: cover;
   border-radius: 5px;
