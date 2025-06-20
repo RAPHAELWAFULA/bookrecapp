@@ -16,13 +16,19 @@
    margin-bottom: 10px;
    width: 20%;
    justify-content: center;
-   height: 50px
+   height: 50px;
+
 }
 
 .logo h1{
 font-family:'exile';
 padding-top: 20px;
 align-items: flex-end;
+background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-weight: bold;
+font-size: 2rem;;
 
 
 }
@@ -55,6 +61,7 @@ align-items: flex-end;
  font-style: normal;
  font-size: small;
 
+
 }
 
 @media (max-width:970px){
@@ -67,16 +74,11 @@ align-items: flex-end;
 
 }
 
-
-.navlinks a:hover,.navlinks a:active,.navlinks a:focus,
-.navlinks a:active
-{
-    color:#a00;
-
-  
-   
-
+.navlinks a:hover
+ { 
+  color: #a00;
 }
+
 
 .read {
 display: flex;

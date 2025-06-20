@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './navbar.css';
 import { useState } from 'react';
 import { FaHome } from 'react-icons/fa';
@@ -28,13 +28,13 @@ const Navbar = ({ isAuthenticated }) => {
       </a>
 
       <div className="navlinks">
-        {/* Protected Links */}
-        <a href="/" onClick={(e) => handleProtectedNav(e, "/")}>EXPLORE</a>
-        <a href="/favourite" onClick={(e) => handleProtectedNav(e, "/favourite")}>FAVOURITES</a>
-        <a href="/library" onClick={(e) => handleProtectedNav(e, "/library")}>LIBRARY</a>
-        <a href="/AddBooks" onClick={(e) => handleProtectedNav(e, "/AddBooks")}>ADD A BOOK</a>
-        <a href="/MyBooks" onClick={(e) => handleProtectedNav(e, "/MyBooks")}>MY LIBRARY</a>
-      </div>
+  <Link to="/" onClick={(e) => handleProtectedNav(e, "/")}>EXPLORE</Link>
+  <Link to="/favourites">FAVOURITES</Link>
+  <Link to="/library">LIBRARY</Link>
+  <Link to="/AddBooks">ADD A BOOK</Link>
+  <Link to="/MyBooks">MY LIBRARY</Link>
+</div>
+
       <div className="logo">
         <h1>BOOKRAC</h1>
       </div>

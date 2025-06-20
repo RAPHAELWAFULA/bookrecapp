@@ -58,7 +58,7 @@ const Library = ({ onLikeBook }) => {
     setRatings((prev) => ({ ...prev, [bookId]: value }));
   };
 
-  if (loading) return <div className="loading">📖 Loading books...</div>;
+  if (loading) return <div className="loading" style={{alignItems:"center", justifyContent:"center"}}>📖 Loading books...</div>;
 
   const filteredThemes = themes.filter((theme) =>
     theme.toLowerCase().includes(searchTerm.toLowerCase())
@@ -73,7 +73,9 @@ const Library = ({ onLikeBook }) => {
         placeholder="Search by theme..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="search-bar"
+        className="search-bar" style={{
+          justifyContent:'center',width:"50%"
+        }}
       />
 
       <input
@@ -82,7 +84,7 @@ const Library = ({ onLikeBook }) => {
         value={bookSearchTerm}
         onChange={(e) => setBookSearchTerm(e.target.value)}
         className="search-bar"
-        style={{ marginTop: '10px' }}
+        style={{ marginTop: '10px', justifyContent:'center',width:"50%" }}
       />
 
       {filteredThemes.map((theme) => {
@@ -103,7 +105,7 @@ const Library = ({ onLikeBook }) => {
                   <div className="book-card" key={bookId}>
                     <img
                       src={info.imageLinks?.thumbnail || ''}
-                      alt={info.title}
+                      alt="sorry no image at the moment"
                       className="book-image"
                     />
                     <h3>{info.title}</h3>

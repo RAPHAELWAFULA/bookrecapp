@@ -9,8 +9,7 @@ const Footer = () => {
       <div className="bottomfooter">
        <div className="bottom1">
         <div className="footerinfo">
-        <h2 style={{backgroundColor:"#36454F",fontfamily:'exile',
-paddingtop: '20px'}}>BOOKRAC</h2>
+        <h2>BOOKRAC</h2>
      <p> Your trusted book recomendation platform
       &copy; 2025 <a href="">BOOKRAC</a> . All rights reserved.
       Contact: <a href="">wafularaphael84@gmail.com</a>

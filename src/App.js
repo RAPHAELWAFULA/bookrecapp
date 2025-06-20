@@ -37,7 +37,8 @@ function App() {
 
 
         {/* These routes require authentication via Navbar's link protection */}
-        <Route path="/favourite" element={<Favourites likedBooks={likedBooks} />} />
+        <Route path="/favourites" element={<Favourites likedBooks={likedBooks} />} />
+
         <Route path="/library" element={<Library onLikeBook={handleLikeBook} />} />
         <Route path="/AddBooks" element={<AddBooks />} />
         <Route path="/MyBooks" element={<MyBooks />} />

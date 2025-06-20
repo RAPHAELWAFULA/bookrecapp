@@ -16,13 +16,7 @@
     background-color:transparent;
    
 }
-.topfooter img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 2px double red;
-    margin: 30px;
-}
+
 
 
 .bottomfooter{
@@ -50,6 +44,9 @@
    
    
 }
+.bottom1 a:hover{
+    text-decoration: underline;
+}
 
 .bottom3 ul, li,.bottom3 a{
     background-color:#36454F; 
@@ -69,9 +66,14 @@
 } 
 .footerinfo h2{ 
     font-size: 40px;
-color: brown;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 2rem;;
 font-family:'exile';
 padding-top: 20px;
+background-color:#36454F ;
 }
 
 .footerinfo p{
@@ -84,8 +86,8 @@ padding-top: 20px;
     text-decoration: none;
 }
 
-.footerinfo a :hover{
-color:red;
+.footerinfo a:Hover{
+text-decoration: underline;
 }
 
 .footericons{
@@ -101,8 +103,14 @@ color:red;
 
 
 .footericons img{
-    padding:10px;
+
+    transition: padding 0.3s ease;
 }
+
+.footericons img:hover{
+    padding: 5px;
+}
+
 
 .footerlinks a {
    
@@ -116,17 +124,22 @@ color:red;
 
 }
 
-.footerlinks   ul a :hover{
-    color: black;
+.footer-container li:hover{
+  
+    text-decoration: underline;
+
 }
 
+
+.footer-container a :hover{
+    text-decoration: underline;
+}
 
 .footerlinks{
     width: 25%;
     background-color:#36454F; 
     display: flex;
     justify-content: center;
-    /* border-left: 3px double white; */
     height: 100%;
     padding: 35px;
  
@@ -139,12 +152,8 @@ color:red;
 
 
 .footericons img{
-    /* border: 1px solid red; */
     border-radius: 50%;
+    cursor: pointer;
 }
 
 
-.bottomfooter a :hover{
-    color:red;
-
-}
