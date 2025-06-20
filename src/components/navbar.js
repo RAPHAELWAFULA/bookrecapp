@@ -28,7 +28,7 @@ const Navbar = ({ isAuthenticated }) => {
       </a>
 
       <div className="navlinks">
-  <Link to="/" onClick={(e) => handleProtectedNav(e, "/")}>EXPLORE</Link>
+  <Link to="/">EXPLORE</Link>
   <Link to="/favourites">FAVOURITES</Link>
   <Link to="/library">LIBRARY</Link>
   <Link to="/AddBooks">ADD A BOOK</Link>
