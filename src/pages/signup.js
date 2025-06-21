@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './signup.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // or from your custom axios.js instance
+import axios from '../api/axios'; // or from your custom axios.js instance
 
 const SignUp = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
@@ -27,11 +27,12 @@ const SignUp = ({ setIsAuthenticated }) => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/signup', {
+      const res = await axios.post('/signup', {
         name: formData.name,
         email: formData.email,
         password: formData.password,
       });
+      
 
       localStorage.setItem('token', res.data.token); // ✅ Moved here inside try block
 

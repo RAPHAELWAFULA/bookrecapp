@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://bookrac-backend-1.onrender.com/api/auth'
-, // match backend
+  baseURL: 'https://bookrac-backend-1.onrender.com/api/auth', // ✅ live backend
 });
 
 instance.interceptors.request.use((config) => {
