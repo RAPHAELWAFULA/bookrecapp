@@ -60,3 +60,9 @@
     transition: transform 0.2s ease;
   }
   
+
+  @media (max-width:970px){
+    .my-books-container{
+      margin-top: 150px;
+    } 
+  }

@@ -57,7 +57,7 @@ body {
   .signin-button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #36454F;
     color: white;
     font-size: 16px;
     border: none;
@@ -113,7 +113,7 @@ body {
   }
   
   .signup-link a {
-    color: #007bff;
+    color:#36454F;
     text-decoration: none;
   }
   

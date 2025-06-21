@@ -24,3 +24,8 @@
   height: auto;
   border-radius: 4px;
 }
+@media (max-width:970px){
+  .favourites-container{
+    margin-top: 150px;
+  } 
+}

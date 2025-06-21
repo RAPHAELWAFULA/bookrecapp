@@ -49,7 +49,7 @@ const SignUp = ({ setIsAuthenticated }) => {
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2 className="signup-title">Create Account</h2>
 
-        <label>Full Name</label>
+        <label style={{backgroundColor:"transparent"}}>Full Name</label>
         <input
           type="text"
           name="name"
@@ -58,7 +58,7 @@ const SignUp = ({ setIsAuthenticated }) => {
           onChange={handleChange}
         />
 
-        <label>Email</label>
+        <label style={{backgroundColor:"transparent"}}>Email</label>
         <input
           type="email"
           name="email"
@@ -67,8 +67,8 @@ const SignUp = ({ setIsAuthenticated }) => {
           onChange={handleChange}
         />
 
-        <label>Password</label>
-        <div className="password-field">
+        <label style={{backgroundColor:"transparent"}}>Password</label>
+        <div className="password-field" style={{backgroundColor:"transparent"}}>
           <input
             type={showPassword ? 'text' : 'password'}
             name="password"
@@ -85,7 +85,7 @@ const SignUp = ({ setIsAuthenticated }) => {
           </button>
         </div>
 
-        <label>Confirm Password</label>
+        <label style={{backgroundColor:"transparent"}}>Confirm Password</label>
         <input
           type={showPassword ? 'text' : 'password'}
           name="confirmPassword"
@@ -96,8 +96,8 @@ const SignUp = ({ setIsAuthenticated }) => {
 
         <button type="submit" className="signup-button">Sign Up</button>
 
-        <p className="signin-link">
-          Already have an account? <a href="/signin">Sign In</a>
+        <p className="signin-link" style={{backgroundColor:"transparent"}}>
+          Already have an account? <a href="/signin" style={{backgroundColor:"transparent"}}>Sign In</a>
         </p>
       </form>
     </div>

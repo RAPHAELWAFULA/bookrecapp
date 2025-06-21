@@ -29,9 +29,10 @@ const SignIn = ({ setIsAuthenticated }) => {
   return (
     <div className="signin-container">
       <form className="signin-form" onSubmit={handleSubmit}>
-        <h2 className="signin-title">Sign In</h2>
+        <h2 className="signin-title" >Sign In</h2>
 
-        <label>Email</label>
+        <label
+        style={{backgroundColor:"transparent"}}>Email</label>
         <input
           type="email"
           required
@@ -39,13 +40,15 @@ const SignIn = ({ setIsAuthenticated }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <label>Password</label>
-        <div className="password-field">
+        <label style={{backgroundColor:"transparent"}}>Password</label>
+        <div className="password-field" style={{backgroundColor:"transparent"}}>
           <input
+          
             type={showPassword ? 'text' : 'password'}
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            
           />
           <button
             type="button"
@@ -58,8 +61,8 @@ const SignIn = ({ setIsAuthenticated }) => {
 
         <button type="submit" className="signin-button">Sign In</button>
 
-        <p className="signup-link">
-          Don't have an account? <a href="/signup">Sign up</a>
+        <p className="signup-link"style={{backgroundColor:"transparent"}}>
+          Don't have an account? <a href="/signup" style={{backgroundColor:"transparent"}}>Sign up</a>
         </p>
       </form>
     </div>
