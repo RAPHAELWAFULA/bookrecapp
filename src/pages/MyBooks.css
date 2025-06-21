@@ -21,6 +21,7 @@
     height: 200px;
     object-fit: cover;
     margin-bottom: 10px;
+    border-radius: 5px;
   }
   .book-card img:hover{
     transform:  rotate(10deg);

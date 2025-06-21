@@ -23,14 +23,10 @@ const Navbar = ({ isAuthenticated }) => {
       <div className='small-nav'>
      
 
-      <a href="/" style={{ display: "none", color: "white" }} className="homeicon">
-        <FaHome />
-      </a>
-
       <div className="navlinks">
-  <Link to="/">EXPLORE</Link>
-  <Link to="/favourites">FAVOURITES</Link>
+  <Link to="/" >EXPLORE</Link>
   <Link to="/library">LIBRARY</Link>
+  <Link to="/favourites">FAVOURITES</Link>
   <Link to="/AddBooks">ADD A BOOK</Link>
   <Link to="/MyBooks">MY LIBRARY</Link>
 </div>
