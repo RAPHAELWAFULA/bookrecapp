@@ -163,7 +163,8 @@ text-decoration: underline;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 20px;
+        /* margin: 20px; */
+        width: 600px;
     }
     .bottomfooter{
         width: 100%;

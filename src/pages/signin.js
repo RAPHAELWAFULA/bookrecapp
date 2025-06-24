@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './signin.css';
 import { useNavigate } from 'react-router-dom';
-import axios from '../api/axios'; // this must have baseURL set to /api/auth
+import axios from '../api/axios';
 
 const SignIn = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState('');
@@ -13,15 +13,17 @@ const SignIn = ({ setIsAuthenticated }) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('/signin', { email, password }); // relative to baseURL
+      const response = await axios.post('/auth/signin', { email, password });
+      const { token, name } = response.data;
 
-      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('token', token);
       setIsAuthenticated(true);
 
-      alert(`📚 Welcome back, ${res.data.name}! Bookrac missed you!`);
+      alert(`📚 Welcome back, ${name}! Bookrac missed you!`);
       navigate('/library');
     } catch (error) {
-      const errorMsg = error.response?.data?.message || 'Signin failed';
+      console.error("FULL SIGNIN ERROR:", error);
+      const errorMsg = error.response?.data?.message || error.message || 'Signin failed';
       alert(`❌ ${errorMsg}`);
     }
   };
@@ -29,10 +31,9 @@ const SignIn = ({ setIsAuthenticated }) => {
   return (
     <div className="signin-container">
       <form className="signin-form" onSubmit={handleSubmit}>
-        <h2 className="signin-title" >Sign In</h2>
+        <h2 className="signin-title">Sign In</h2>
 
-        <label
-        style={{backgroundColor:"transparent"}}>Email</label>
+        <label style={{ backgroundColor: "transparent" }}>Email</label>
         <input
           type="email"
           required
@@ -40,15 +41,13 @@ const SignIn = ({ setIsAuthenticated }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <label style={{backgroundColor:"transparent"}}>Password</label>
-        <div className="password-field" style={{backgroundColor:"transparent"}}>
+        <label style={{ backgroundColor: "transparent" }}>Password</label>
+        <div className="password-field" style={{ backgroundColor: "transparent" }}>
           <input
-          
             type={showPassword ? 'text' : 'password'}
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            
           />
           <button
             type="button"
@@ -61,8 +60,8 @@ const SignIn = ({ setIsAuthenticated }) => {
 
         <button type="submit" className="signin-button">Sign In</button>
 
-        <p className="signup-link"style={{backgroundColor:"transparent"}}>
-          Don't have an account? <a href="/signup" style={{backgroundColor:"transparent"}}>Sign up</a>
+        <p className="signup-link" style={{ backgroundColor: "transparent" }}>
+          Don't have an account? <a href="/signup" style={{ backgroundColor: "transparent" }}>Sign up</a>
         </p>
       </form>
     </div>
