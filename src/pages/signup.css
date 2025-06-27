@@ -12,6 +12,24 @@ body {
     margin:50px;
   }
   
+
+  @media screen and (max-width: 800px){
+    .signup-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:600px ;
+    }
+    .signup-form{
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin: 20px;
+    }
+
+  }
+
+
   .signup-form {
     background: white;
     padding: 40px;

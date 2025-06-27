@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './library.css';
 import { useNavigate } from 'react-router-dom';
+import axios from '../api/axios';
+import { BACKEND_URL } from '../App';
 
 const themes = [
   'fiction', 'science', 'history', 'technology', 'art',
   'travel', 'biography', 'business', 'health', 'romance',
-  'sports', 'cooking', 'love', 'horse','music','religion and doctrines','legends and myths','horror','disney books'
+  'sports', 'cooking', 'love', 'horse', 'music',
+  'religion and doctrines', 'legends and myths', 'horror', 'disney books'
 ];
 
-const Library = ({ onLikeBook }) => {
+const Library = () => {
   const [booksByTheme, setBooksByTheme] = useState({});
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -58,14 +61,36 @@ const Library = ({ onLikeBook }) => {
     setRatings((prev) => ({ ...prev, [bookId]: value }));
   };
 
-  if (loading) return <div className="loading" style={{alignItems:"center", justifyContent:"center"}}>📖 Loading books...</div>;
+  const handleLikeBook = async (book) => {
+    const bookData = {
+      bookId: book.id,
+      title: book.volumeInfo?.title || 'Untitled',
+      authors: book.volumeInfo?.authors || ['Unknown'],
+      description: book.volumeInfo?.description || 'No description',
+      thumbnail: book.volumeInfo?.imageLinks?.thumbnail || '',
+    };
+
+    try {
+      const res = await axios.post('/like', bookData); // token added automatically
+      console.log('✅ Book liked!', res.data);
+    } catch (err) {
+      console.error('❌ Failed to like book:', err.response?.data || err.message);
+    }
+  };
+
+  if (loading)
+    return (
+      <div className="loading" style={{display:'flex', alignItems: 'center', justifyContent: 'center' }}>
+        📖 Loading books...
+      </div>
+    );
 
   const filteredThemes = themes.filter((theme) =>
     theme.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="library-container">
+    <div className="library-container" style={{display:'flex',flexDirection:'column',}}>
       <h1>Library</h1>
 
       <input
@@ -73,9 +98,8 @@ const Library = ({ onLikeBook }) => {
         placeholder="Search by theme..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="search-bar" style={{
-          justifyContent:'center',width:"50%"
-        }}
+        className="search-bar"
+        style={{ display:'flex', justifyContent: 'center', width: '50%' }}
       />
 
       <input
@@ -84,7 +108,7 @@ const Library = ({ onLikeBook }) => {
         value={bookSearchTerm}
         onChange={(e) => setBookSearchTerm(e.target.value)}
         className="search-bar"
-        style={{ marginTop: '10px', justifyContent:'center',width:"50%" }}
+        style={{ marginTop: '10px', justifyContent: 'center', width: '50%' }}
       />
 
       {filteredThemes.map((theme) => {
@@ -103,17 +127,15 @@ const Library = ({ onLikeBook }) => {
                 const bookId = book.id;
                 return (
                   <div className="book-card" key={bookId}>
-                    <img
-                      src={info.imageLinks?.thumbnail || ''}
-                      alt="sorry no image at the moment"
-                      className="book-image"
-                    />
+                   <img
+  src={info.imageLinks?.thumbnail || null} // use null not empty string
+  alt="sorry no image at the moment"
+  className="book-image"
+/>
+
                     <h3>{info.title}</h3>
                     <p>{info.authors?.join(', ') || 'Unknown Author'}</p>
-                    <button
-                      className="like-button"
-                      onClick={() => onLikeBook(book)}
-                    >
+                    <button className="like-button" onClick={() => handleLikeBook(book)}>
                       ❤️ Like
                     </button>
                     <select
@@ -138,7 +160,6 @@ const Library = ({ onLikeBook }) => {
         );
       })}
 
-      {/* Scroll to Top Button */}
       {showScroll && (
         <button className="scroll-to-top show" onClick={scrollToTop}>
           ⬆️

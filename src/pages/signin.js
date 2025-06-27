@@ -13,7 +13,7 @@ const SignIn = ({ setIsAuthenticated }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/auth/signin', { email, password });
+      const response = await axios.post('/signin', { email, password });
       const { token, name } = response.data;
 
       localStorage.setItem('token', token);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './signup.css';
 import { useNavigate } from 'react-router-dom';
-import axios from '../api/axios'; // or from your custom axios.js instance
+import axios from '../api/axios'; // ✅ this is correct for custom axios instance
 
 const SignUp = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
@@ -32,9 +32,8 @@ const SignUp = ({ setIsAuthenticated }) => {
         email: formData.email,
         password: formData.password,
       });
-      
 
-      localStorage.setItem('token', res.data.token); // ✅ Moved here inside try block
+      localStorage.setItem('token', res.data.token); // ✅ token must be saved
 
       alert(`✅ ${res.data.message} Welcome, ${formData.name}!`);
       setIsAuthenticated(true);
@@ -50,7 +49,7 @@ const SignUp = ({ setIsAuthenticated }) => {
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2 className="signup-title">Create Account</h2>
 
-        <label style={{backgroundColor:"transparent"}}>Full Name</label>
+        <label>Full Name</label>
         <input
           type="text"
           name="name"
@@ -59,7 +58,7 @@ const SignUp = ({ setIsAuthenticated }) => {
           onChange={handleChange}
         />
 
-        <label style={{backgroundColor:"transparent"}}>Email</label>
+        <label>Email</label>
         <input
           type="email"
           name="email"
@@ -68,8 +67,8 @@ const SignUp = ({ setIsAuthenticated }) => {
           onChange={handleChange}
         />
 
-        <label style={{backgroundColor:"transparent"}}>Password</label>
-        <div className="password-field" style={{backgroundColor:"transparent"}}>
+        <label>Password</label>
+        <div className="password-field">
           <input
             type={showPassword ? 'text' : 'password'}
             name="password"
@@ -86,7 +85,7 @@ const SignUp = ({ setIsAuthenticated }) => {
           </button>
         </div>
 
-        <label style={{backgroundColor:"transparent"}}>Confirm Password</label>
+        <label>Confirm Password</label>
         <input
           type={showPassword ? 'text' : 'password'}
           name="confirmPassword"
@@ -97,8 +96,8 @@ const SignUp = ({ setIsAuthenticated }) => {
 
         <button type="submit" className="signup-button">Sign Up</button>
 
-        <p className="signin-link" style={{backgroundColor:"transparent"}}>
-          Already have an account? <a href="/signin" style={{backgroundColor:"transparent"}}>Sign In</a>
+        <p className="signin-link">
+          Already have an account? <a href="/signin">Sign In</a>
         </p>
       </form>
     </div>

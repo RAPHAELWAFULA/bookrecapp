@@ -121,3 +121,18 @@ body {
     text-decoration: underline;
   }
   
+  @media screen and (max-width: 800px){
+    .signin-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:700px ;
+    }
+    .signin-form{
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin: 20px;
+    }
+
+  }

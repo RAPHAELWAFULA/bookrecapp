@@ -11,7 +11,8 @@ const Favourites = () => {
         const res = await axios.get('/user/favourites');
         setFavouriteBooks(res.data);
       } catch (error) {
-        alert('❌ Failed to fetch favourites');
+        alert(`❌ Failed to fetch favourites: ${error.response?.data?.message || error.message}`);
+
       }
     };
     fetchFavourites();

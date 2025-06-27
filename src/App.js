@@ -10,9 +10,8 @@ import AddBooks from "./pages/AddBooks";
 import MyBooks from "./pages/MyBooks";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
-
 import './App.css';
-
+ export const BACKEND_URL="https://bookrac-backend-1.onrender.com/api"
 function App() {
   const [likedBooks, setLikedBooks] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false); // 🔐 auth state

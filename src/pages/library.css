@@ -12,6 +12,19 @@
 
  margin-top: 150px;
   }
+  .theme-section{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 800px;
+    padding: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+
+  }
+  .book-grid{
+    
+  }
 }
 
 /* Search bars */
@@ -114,10 +127,13 @@ search-bars {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+  
+  
 }
 .like-button:hover{
-  border-radius: 5px;
-  background-color: ;
+  border-radius: 50px;
+  background-color:red ;
 }
 
 /* Rating dropdown */
