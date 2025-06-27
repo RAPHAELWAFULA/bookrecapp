@@ -14,12 +14,12 @@ const SignIn = ({ setIsAuthenticated }) => {
 
     try {
       const response = await axios.post('/signin', { email, password });
-      const { token, name } = response.data;
+      const { token, user } = response.data;
 
       localStorage.setItem('token', token);
       setIsAuthenticated(true);
 
-      alert(`📚 Welcome back, ${name}! Bookrac missed you!`);
+      alert(`📚 Welcome back, ${user.name}! Bookrac missed you!`);
       navigate('/library');
     } catch (error) {
       console.error("FULL SIGNIN ERROR:", error);
