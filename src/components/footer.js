@@ -12,7 +12,7 @@ const Footer = () => {
         <h2>BOOKRAC</h2>
      <p> Your trusted book recomendation platform
       &copy; 2025 <a href="https://github.com">BOOKRAC</a> . All rights reserved.
-      Contact: <a href="">wafularaphael84@gmail.com</a>
+      Contact: <a href="https://github.com">wafularaphael84@gmail.com</a>
       
       Privacy Policy, Terms of Service, © Copyright
       </p>
@@ -44,10 +44,10 @@ const Footer = () => {
         <div className="bottom3">
           <ul>
             <li><b>SUPPORT</b></li>
-            <li><a href="">Help Centre</a></li>
-            <li><a href="">FAQ</a></li>
-            <li><a href="">Error Support</a></li>
-            <li><a href="">Contact Us</a></li>
+            <li><a href="https://github.com">Help Centre</a></li>
+            <li><a href="https://github.com">FAQ</a></li>
+            <li><a href="https://github.com">Error Support</a></li>
+            <li><a href="https://github.com">Contact Us</a></li>
           </ul>
         </div>
 
@@ -56,11 +56,11 @@ const Footer = () => {
       
         }}>
         <ul>
-          <li><a href="">FAQ</a></li>
-          <li><a href="">TELL</a></li>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">HOME</a></li>
-          <li><a href="">HELP</a></li>
+          <li><a href="https://github.com">FAQ</a></li>
+          <li><a href="https://github.com">TELL</a></li>
+          <li><a href="https://github.com">ABOUT</a></li>
+          <li><a href="https://github.com">HOME</a></li>
+          <li><a href="https://github.com">HELP</a></li>
         </ul>
         </div>
       </div>
