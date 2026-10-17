@@ -1,6 +1,6 @@
 import React from "react";
 // import "./Explore.css"; // Make sure to import your CSS
-import SignIn from "./signin";
+// import SignIn from "./signin";
 
 const Explore = () => {
   return (

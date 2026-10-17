@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './library.css';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import axios from '../api/axios';
-import { BACKEND_URL } from '../App';
+// import { BACKEND_URL } from '../App';
 
 const themes = [
   'fiction', 'science', 'history', 'technology', 'art',
@@ -129,7 +129,7 @@ const Library = () => {
                   <div className="book-card" key={bookId}>
                    <img
   src={info.imageLinks?.thumbnail || null} // use null not empty string
-  alt="sorry no image at the moment"
+  alt=""
   className="book-image"
 />
 
