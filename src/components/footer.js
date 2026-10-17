@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footerinfo">
         <h2>BOOKRAC</h2>
      <p> Your trusted book recomendation platform
-      &copy; 2025 <a href="">BOOKRAC</a> . All rights reserved.
+      &copy; 2025 <a href="https://github.com">BOOKRAC</a> . All rights reserved.
       Contact: <a href="">wafularaphael84@gmail.com</a>
       
       Privacy Policy, Terms of Service, © Copyright
