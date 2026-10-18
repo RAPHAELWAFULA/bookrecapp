@@ -29,8 +29,15 @@ const Library = () => {
           const res = await fetch(
             `https://www.googleapis.com/books/v1/volumes?q=subject:${theme}&maxResults=40`
           );
-          const data = await res.json();
-          newBooks[theme] = data.items || [];
+         const data = await res.json();
+
+if (!res.ok) {
+  console.error(`Google Books error for ${theme}:`, res.status, data);
+  newBooks[theme] = [];
+  continue;
+}
+
+newBooks[theme] = data.items || [];
         } catch (err) {
           console.error(`Error fetching books for theme: ${theme}`, err);
           newBooks[theme] = [];
